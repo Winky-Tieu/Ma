@@ -102,6 +102,27 @@
                 // 6. 定时器动态更新
                 setInterval(getDateTime,1);
             })();
+		
+		            function resizeFun()
+            {
+                var w = $(window).width();
+                var h = $(window).height();
+                var pw = w / 500; // 根据页面设计，动态修改宽高
+                var ph = h / 600;
+                $("body").css("transform", "scale(" + pw + "," + ph + ")");  // 设置等比例缩放
+            }
+
+                // 监听屏幕缩放，自适应
+                $(window).resize(function () {
+                resizeFun();
+                });
+
+                //  初始化调用
+
+                $(function () {
+                resizeFun();
+                })
+		
         </script>
 
         <div class="rightbox">
